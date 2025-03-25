@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="left-panel">
+      <ul>
+        <li *ngFor="let item of dataList" (click)="selectItem(item)" 
+            [class.selected]="item === selectedItem">
+          {{ item.SamplingTime | date:'dd-MM-yyyy hh:mm:ss a' }}
+        </li>
+      </ul>
+    </div>
+    
+    <div class="right-panel" *ngIf="selectedItem && selectedItem.Properties">
+      <div class="form-group">
+        <label>Project Name:</label>
+        <input type="text" [(ngModel)]="selectedItem.Properties[0].Value" />
+      </div>
+      
+      <div class="form-group">
+        <label>Construction Count:</label>
+        <input type="number" [(ngModel)]="selectedItem.Properties[1].Value" />
+      </div>
+      
+      <div class="form-group">
+        <label>Is Construction Completed:</label>
+        <input type="checkbox" [(ngModel)]="selectedItem.Properties[2].Value" />
+      </div>
+      
+      <div class="form-group">
+        <label>Length of Road:</label>
+        <input type="number" [(ngModel)]="selectedItem.Properties[3].Value" /> <span>KM</span>
+      </div>
+      
+      <button (click)="saveChanges()">Save</button>
+    </div>
+  </div>
+  
