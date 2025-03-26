@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="dataList" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataList" class="mat-elevation-z8" >
 
 
     <ng-container matColumnDef="samplingTime">
@@ -10,7 +10,7 @@
     <ng-container matColumnDef="projectName">
       <th mat-header-cell *matHeaderCellDef> Project Name </th>
       <td mat-cell *matCellDef="let element">
-        {{ getPropertyValue(element, 'Project Name')}}
+        {{ getPropertyValue(element, 'Project Name') }}
       </td>
     </ng-container>
 
@@ -18,7 +18,7 @@
       <ng-container matColumnDef="constructioncount">
         <th mat-header-cell *matHeaderCellDef> Construction Count </th>
         <td mat-cell *matCellDef="let element">
-          {{ getPropertyValue(element, 'Construction Count')}}
+          {{ getPropertyValue(element, 'Construction Count') }}
         </td>
       </ng-container>
 
@@ -26,7 +26,7 @@
       <ng-container matColumnDef="isconstructiondone">
         <th mat-header-cell *matHeaderCellDef> Is Construction Completed  </th>
         <td mat-cell *matCellDef="let element">
-          {{ getPropertyValue(element, 'Is Construction Completed')}}
+          {{ getPropertyValue(element, 'Is Construction Completed') ? '✅ Yes' : '❌ No' }}
         </td>
       </ng-container>
 
@@ -34,7 +34,7 @@
       <ng-container matColumnDef="lengthofroad">
         <th mat-header-cell *matHeaderCellDef> Length of the road</th>
         <td mat-cell *matCellDef="let element">
-          {{ getPropertyValue(element, 'Length of the road')}}
+          {{ getPropertyValue(element, 'Length of the road') }}
         </td>
       </ng-container>
 
@@ -43,3 +43,55 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- {
+    "Id": 1,
+    "Name": "New Observation",
+    "Datas": [
+      {
+        "SamplingTime": "2021-04-21T11:00:05.5051255+05:30",
+        "Properties": [
+          { "Value": "Road Construction 1", "Label": "Project Name" },
+          { "Value": 40, "Label": "Construction Count" },
+          { "Value": false, "Label": "Is Construction Completed" },
+          { "Value": 5.6, "Label": "Length of the road" }
+        ]
+      },
+      {
+        "SamplingTime": "2021-04-22T11:00:05.5081232+05:30",
+        "Properties": [
+          { "Value": "Road Construction 2", "Label": "Project Name" },
+          { "Value": true, "Label": "Is Construction Completed" },
+          { "Value": 3.2, "Label": "Length of the road" }
+        ]
+      },
+      {
+        "SamplingTime": "2021-04-22T11:00:05.5081232+05:30",
+        "Properties": [
+          { "Value": "Road Construction 3", "Label": "Project Name" },
+          { "Value": false, "Label": "Is Construction Completed" }
+          
+        ]
+      }
+    ]
+  } -->
