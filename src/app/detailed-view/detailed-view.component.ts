@@ -54,5 +54,18 @@ export class DetailedViewComponent implements OnInit {
 
   saveChanges(){
     console.log("Updated Data: ", this.selectedItem);
+
+    this.dataList = this.dataList.map(item => (item.SamplingTime === this.selectedItem.SamplingTime ? this.selectedItem : item));
+
+    const updatedData = {
+      Id: 1,
+      Name: 'New Observation',
+      Datas: this.dataList
+    };
+
+    this.dataService.saveData(updatedData).subscribe(response => {
+      console.log('Data saved successfully', response);
+    });
+
   }
 }
