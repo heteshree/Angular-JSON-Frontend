@@ -39,9 +39,15 @@ export class SummaryViewComponent implements OnInit{
   )    
 
     }
+
+
     getPropertyValue(element: any, label: string): any {
-      const property = element.Properties.find((prop: any) => prop.Label === label);
-      return property ? property.Value : 'Not Available';
+      const value = element?.Properties?.find((prop: any) => prop.Label === label)?.Value;
+      return value === undefined || value === null || value === '' ? 'Not Available' : value;
     }
+    
+
+    
+    
   
 }
